@@ -13,13 +13,13 @@ This is set up on MacOS so some commands may be a little different on a Linux ma
 	- click the "AWS Details" 
 	- click "Show CLI"
 	- copy and paste it into `~/.aws/credentials`
-	```bash 
-	# if you don't have the path /.aws/credentials :
-	cd ~
-	mkdir /.aws
-	touch credentials
-	vim ~/.aws/credentials
-	# paste CLI
+```bash 
+# if you don't have the path /.aws/credentials :
+cd ~
+mkdir /.aws
+touch credentials
+vim ~/.aws/credentials
+# paste CLI
 ```
 ## Steps to Run
 1. Clone the repository:
