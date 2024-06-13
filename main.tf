@@ -10,7 +10,7 @@ resource "aws_security_group" "minecraft_security_group" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["185.219.141.30/32"] # Replace with IP address
+    cidr_blocks = ["0.0.0.0/32"] # Replace with IP address
   }
 
   ingress {
