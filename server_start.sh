@@ -12,6 +12,7 @@ chmod 400 mc-proj2-key.pem.pem
 terraform init
 terraform apply -auto-approve
 
+# get ip addr of instance
 output=$(terraform show | grep "public_ip" | sed '2p;d')
 ip=$(echo "$output" | cut -d '"' -f 2)
 echo "Public IP: $ip"
@@ -20,7 +21,8 @@ dns="ec2-$(echo "$ip" | tr '.' '-').us-west-2.compute.amazonaws.com"
 echo "Public DNS: $dns"
 
 echo "server initializing please wait..."
-sleep 300
+# have had some instances take too long, 300=5min, too long too but will make sure instance is up and running
+sleep 140
 
 # SSH into the instance
 ssh -i "mc-proj2-key.pem.pem" ec2-user@$dns 'bash -s' < instance_update.sh
